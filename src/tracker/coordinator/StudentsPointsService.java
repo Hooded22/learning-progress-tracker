@@ -9,9 +9,9 @@ import tracker.students.StudentsService;
 import tracker.students.exceptions.StudentNotFound;
 
 public class StudentsPointsService {
-    PointsService pointsService;
-    StudentsService studentsService;
-    CoursesService coursesService;
+    final PointsService pointsService;
+    final StudentsService studentsService;
+    final CoursesService coursesService;
 
     public StudentsPointsService(PointsService pointsService, StudentsService studentsService, CoursesService coursesService) {
         this.pointsService = pointsService;

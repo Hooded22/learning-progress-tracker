@@ -12,7 +12,7 @@ import tracker.students.exceptions.StudentNotFound;
 import java.util.Objects;
 
 public class AddPointsState implements State<CommonCommands> {
-    CourseManagementService courseManagementService;
+    final CourseManagementService courseManagementService;
 
     public AddPointsState(CourseManagementService courseManagementService) {
         this.courseManagementService = courseManagementService;

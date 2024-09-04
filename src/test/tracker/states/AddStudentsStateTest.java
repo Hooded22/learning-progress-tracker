@@ -1,4 +1,4 @@
-package tracker.states;
+package test.tracker.states;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import tracker.Context;
 import tracker.messages.AddStudentsMessages;
+import tracker.states.AddStudentsState;
+import tracker.states.MainState;
 import tracker.students.StudentMessages;
 import tracker.students.StudentsService;
 import tracker.students.exceptions.InvalidStudentCredentials;

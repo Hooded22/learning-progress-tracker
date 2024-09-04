@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class PointsRepository {
-    List<Point> points = new ArrayList<>();
+    final List<Point> points = new ArrayList<>();
 
     public PointsRepository() {
     }

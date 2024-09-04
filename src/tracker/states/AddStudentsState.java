@@ -10,7 +10,7 @@ import tracker.students.StudentsService;
 import tracker.students.exceptions.InvalidStudentCredentials;
 
 public class AddStudentsState implements State<AddStudentsCommand> {
-    StudentsService studentsService;
+    final StudentsService studentsService;
     int numberOfAddedStudents = 0;
 
     public AddStudentsState(StudentsService studentsService) {

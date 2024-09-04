@@ -4,7 +4,7 @@ import java.util.List;
 
 //TODO: Consider rename to SubmissionsService
 public class PointsService {
-    PointsRepository pointsRepository;
+    final PointsRepository pointsRepository;
 
     public PointsService(PointsRepository pointsRepository) {
         this.pointsRepository = pointsRepository;

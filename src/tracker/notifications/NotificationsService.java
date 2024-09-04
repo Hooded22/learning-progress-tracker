@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 public class NotificationsService {
-    NotificationsRepository notificationsRepository;
+    final NotificationsRepository notificationsRepository;
 
 
     public NotificationsService(NotificationsRepository notificationsRepository) {

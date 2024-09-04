@@ -31,7 +31,7 @@ class StatisticsServiceTest {
 
     @Test
     public void getCoursesStats_differentValues_shouldReturnCourseStatistics() {
-        List<Course> courses = this.mockCoursesServiceMethods(3);
+        List<Course> courses = this.mockCoursesServiceMethods();
         Course course1 = courses.get(0);
         Course course3 = courses.get(2);
 
@@ -44,17 +44,17 @@ class StatisticsServiceTest {
         Assertions.assertEquals(1, result.getEasiestCourses().size());
         Assertions.assertEquals(1, result.getHardestCourses().size());
 
-        Assertions.assertEquals(course3, result.getMostPopularCourses().get(0));
-        Assertions.assertEquals(course1, result.getLeastPopularCourses().get(0));
-        Assertions.assertEquals(course3, result.getCoursesWithHighestActivity().get(0));
-        Assertions.assertEquals(course1, result.getCoursesWithLowestActivity().get(0));
-        Assertions.assertEquals(course1, result.getHardestCourses().get(0));
-        Assertions.assertEquals(course3, result.getEasiestCourses().get(0));
+        Assertions.assertEquals(course3, result.getMostPopularCourses().getFirst());
+        Assertions.assertEquals(course1, result.getLeastPopularCourses().getFirst());
+        Assertions.assertEquals(course3, result.getCoursesWithHighestActivity().getFirst());
+        Assertions.assertEquals(course1, result.getCoursesWithLowestActivity().getFirst());
+        Assertions.assertEquals(course1, result.getHardestCourses().getFirst());
+        Assertions.assertEquals(course3, result.getEasiestCourses().getFirst());
     }
 
     @Test
     public void getCoursesStats_sameValues_shouldReturnCourseStatistics() {
-        this.mockCoursesServiceMethodsWithSameReturnedValues(3);
+        this.mockCoursesServiceMethodsWithSameReturnedValues();
 
         CourseStatistics result = statisticsService.getCoursesStats();
 
@@ -103,11 +103,11 @@ class StatisticsServiceTest {
         Assertions.assertEquals("student-3", result.get(2).getStudentID());
     }
 
-    private List<Course> mockCoursesServiceMethods(int coursesNumber) {
+    private List<Course> mockCoursesServiceMethods() {
         List<Course> courses = new ArrayList<>();
         Mockito.when(coursesService.getAllCourses()).thenReturn(courses);
 
-        for (int i = 0; i < coursesNumber; i++) {
+        for (int i = 0; i < 3; i++) {
             Course course = new Course("Course " + i);
             courses.add(course);
 
@@ -119,11 +119,11 @@ class StatisticsServiceTest {
         return courses;
     }
 
-    private List<Course> mockCoursesServiceMethodsWithSameReturnedValues(int coursesNumber) {
+    private void mockCoursesServiceMethodsWithSameReturnedValues() {
         List<Course> courses = new ArrayList<>();
         Mockito.when(coursesService.getAllCourses()).thenReturn(courses);
 
-        for (int i = 0; i < coursesNumber; i++) {
+        for (int i = 0; i < 3; i++) {
             Course course = new Course("Course " + i);
             courses.add(course);
 
@@ -132,6 +132,5 @@ class StatisticsServiceTest {
             Mockito.when(coursesService.getCourseAvgPoints(ArgumentMatchers.eq(course.getId()))).thenReturn(3);
         }
 
-        return courses;
     }
 }

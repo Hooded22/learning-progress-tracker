@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class CoursesService {
-    CoursesRepository coursesRepository;
-    PointsService pointsService;
+    final CoursesRepository coursesRepository;
+    final PointsService pointsService;
 
     public CoursesService(CoursesRepository coursesRepository, PointsService pointsService) {
         this.coursesRepository = coursesRepository;

@@ -14,8 +14,8 @@ import tracker.students.StudentsService;
 import java.util.List;
 
 public class MainState implements State<MainStateCommands> {
-    StudentsService studentsService;
-    NotificationsService notificationsService;
+    final StudentsService studentsService;
+    final NotificationsService notificationsService;
 
     public MainState(StudentsService studentsService, NotificationsService notificationsService) {
         this.studentsService = studentsService;

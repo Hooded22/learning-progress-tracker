@@ -6,7 +6,7 @@ import tracker.students.exceptions.StudentNotFound;
 import java.util.List;
 
 public class StudentsService {
-    StudentsRepository studentsRepository;
+    final StudentsRepository studentsRepository;
 
     public StudentsService(StudentsRepository studentsRepository) {
         this.studentsRepository = studentsRepository;

@@ -1,4 +1,4 @@
-package tracker.states;
+package test.tracker.states;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -9,6 +9,8 @@ import org.mockito.Mockito;
 import tracker.Context;
 import tracker.coordinator.StudentsPointsService;
 import tracker.messages.FindStudentMessages;
+import tracker.states.FindStudentState;
+import tracker.states.MainState;
 import tracker.students.StudentMessages;
 import tracker.students.exceptions.StudentNotFound;
 

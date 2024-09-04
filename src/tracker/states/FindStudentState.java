@@ -11,7 +11,7 @@ import tracker.students.exceptions.StudentNotFound;
 import java.util.Objects;
 
 public class FindStudentState implements State<CommonCommands> {
-    StudentsPointsService studentsPointsService;
+    final StudentsPointsService studentsPointsService;
 
     public FindStudentState(StudentsPointsService studentsPointsService) {
         this.studentsPointsService = studentsPointsService;

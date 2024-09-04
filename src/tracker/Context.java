@@ -24,19 +24,19 @@ import tracker.validation.ValidationService;
 import java.util.List;
 
 public class Context {
-    StudentsRepository studentsRepository = new StudentsRepository();
-    PointsRepository pointsRepository = new PointsRepository();
-    CoursesRepository coursesRepository = new CoursesRepository();
-    NotificationsRepository notificationsRepository = new NotificationsRepository();
+    private final StudentsRepository studentsRepository = new StudentsRepository();
+    private final PointsRepository pointsRepository = new PointsRepository();
+    private final CoursesRepository coursesRepository = new CoursesRepository();
+    private final NotificationsRepository notificationsRepository = new NotificationsRepository();
 
-    NotificationsService notificationsService = new NotificationsService(notificationsRepository);
-    ValidationService validationService = new ValidationService(studentsRepository);
-    PointsService pointsService = new PointsService(pointsRepository);
-    CoursesService coursesService = new CoursesService(coursesRepository, pointsService);
-    StatisticsService statisticsService = new StatisticsService(coursesService, pointsService);
-    StudentsService studentsService = new StudentsService(studentsRepository);
-    CourseManagementService courseManagementService = new CourseManagementService(coursesService, pointsService, validationService, studentsService, notificationsService);
-    StudentsPointsService studentsPointsService = new StudentsPointsService(pointsService, studentsService, coursesService);
+    private final NotificationsService notificationsService = new NotificationsService(notificationsRepository);
+    private final ValidationService validationService = new ValidationService(studentsRepository);
+    private final PointsService pointsService = new PointsService(pointsRepository);
+    private final CoursesService coursesService = new CoursesService(coursesRepository, pointsService);
+    private final StatisticsService statisticsService = new StatisticsService(coursesService, pointsService);
+    private final StudentsService studentsService = new StudentsService(studentsRepository);
+    private final CourseManagementService courseManagementService = new CourseManagementService(coursesService, pointsService, validationService, studentsService, notificationsService);
+    private final StudentsPointsService studentsPointsService = new StudentsPointsService(pointsService, studentsService, coursesService);
     private State currentState;
 
     public Context() {

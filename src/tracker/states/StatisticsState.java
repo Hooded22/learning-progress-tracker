@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class StatisticsState implements State<CommonCommands> {
-    StatisticsService statisticsService;
+    final StatisticsService statisticsService;
 
     public StatisticsState(StatisticsService statisticsService) {
         this.statisticsService = statisticsService;

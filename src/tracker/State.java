@@ -9,10 +9,6 @@ import tracker.states.MainState;
 public interface State<C extends Enum<C> & Command> {
     void handleCommand(Context context, String commandInput) throws InvalidCommandException, ProgramExitException;
 
-    default void displayResponse(String response) {
-        System.out.println(response);
-    }
-
     default void validateCommand(String command) throws InvalidCommandException {
         if (command.trim().isEmpty()) {
             throw new InvalidCommandException(CommandErrorMessageEnum.NO_INPUT.getMessage());

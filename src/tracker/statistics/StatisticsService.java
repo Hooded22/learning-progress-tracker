@@ -11,8 +11,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class StatisticsService {
-    CoursesService coursesService;
-    PointsService pointsService;
+    final CoursesService coursesService;
+    final PointsService pointsService;
 
     public StatisticsService(CoursesService coursesService, PointsService pointsService) {
         this.coursesService = coursesService;

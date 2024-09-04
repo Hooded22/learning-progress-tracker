@@ -14,11 +14,11 @@ import tracker.validation.ValidationService;
 import java.util.List;
 
 public class CourseManagementService {
-    CoursesService coursesService;
-    PointsService pointsService;
-    ValidationService validationService;
-    NotificationsService notificationsService;
-    StudentsService studentsService;
+    final CoursesService coursesService;
+    final PointsService pointsService;
+    final ValidationService validationService;
+    final NotificationsService notificationsService;
+    final StudentsService studentsService;
 
 
     public CourseManagementService(CoursesService coursesService, PointsService pointsService, ValidationService validationService, StudentsService studentsService, NotificationsService notificationsService) {

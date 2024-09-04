@@ -1,4 +1,4 @@
-package tracker.states;
+package test.tracker.states;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -10,6 +10,9 @@ import tracker.exceptions.InvalidCommandException;
 import tracker.exceptions.ProgramExitException;
 import tracker.messages.MainStateMessagesEnum;
 import tracker.notifications.NotificationsService;
+import tracker.states.AddStudentsState;
+import tracker.states.FindStudentState;
+import tracker.states.MainState;
 import tracker.students.Student;
 import tracker.students.StudentsService;
 

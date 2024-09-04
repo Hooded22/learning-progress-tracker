@@ -11,7 +11,6 @@ import tracker.points.PointNotFound;
 import tracker.points.PointsRepository;
 import tracker.points.PointsService;
 import tracker.students.StudentsService;
-import tracker.students.exceptions.StudentNotFound;
 import tracker.validation.ValidationService;
 
 import java.io.ByteArrayOutputStream;
@@ -66,7 +65,7 @@ class PointsServiceTest {
     }
 
     @Test
-    void updatePoint_studentWithPoint_shouldCallPointsRepository() throws StudentNotFound {
+    void updatePoint_studentWithPoint_shouldCallPointsRepository() {
         String courseID = "mocked-course-i";
         String studentID = "mocked-student-i";
         Point pointSpy = Mockito.spy(new Point("abc123", courseID, 12));
@@ -78,7 +77,7 @@ class PointsServiceTest {
     }
 
     @Test
-    void addPoint_shouldCallPointsRepository() throws StudentNotFound {
+    void addPoint_shouldCallPointsRepository() {
         pointsService.addPoint("student-id", "course-id", 12);
 
         Mockito.verify(pointsRepository).addPoint(ArgumentMatchers.isA(Point.class));
